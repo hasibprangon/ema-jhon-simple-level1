@@ -1,0 +1,11 @@
+.cart {
+    width: 264px;
+    height: 944px;
+    padding: 25px;
+    flex-shrink: 0;
+    background-color: rgba(255, 153, 0, 0.30);
+}
+
+.cart p{
+    font-size: 17px;
+}
