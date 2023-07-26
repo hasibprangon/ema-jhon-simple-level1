@@ -16,8 +16,43 @@ const Shop = () => {
 
     useEffect(() => {
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-    }, [])
+        //step1: get id
+        for (const id in storedCart) {
+
+            //step2: get product by id
+            const addedProduct = products.find(product => product.id === id);
+            if(addedProduct){
+
+                //step3:add quantity
+               const quantity = storedCart[id];
+               addedProduct.quantity =  quantity;
+            }
+            console.log(addedProduct);
+        }
+    }, [products])
+
+    // useEffect(() => {
+    //     // console.log('prodcts:',products);
+    //     const storedCart = getShoppingCart();
+    //     //step-1:get id
+    //     for (const id in storedCart){
+    //         // console.log(id);
+
+    //         //step-2:get product by using id
+    //         const addedProduct = products.find(product => product.id === id)
+    //         // console.log(addedProduct);
+    //         if(addedProduct){
+
+
+    //         //step-3: get quantity of the product
+    //         const quantity = storedCart[id];
+    //         addedProduct.quantity = quantity;
+    //         // addedProduct.quantity = quantity;
+
+    //         console.log(addedProduct);
+    //         }
+    //     }
+    // }, [products])
 
     const handleAddToCart = (product) => {
         // cart.push(product); 
